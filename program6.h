@@ -48,6 +48,7 @@ Notes:
     You can implement the stack with a linked list or an array. 
     Do not change the public function prototypes.
 *********************************************************************/
+//As Linked List
 class MaintenanceStack 
 {
     private:
@@ -56,8 +57,10 @@ class MaintenanceStack
             int iRequestNumber;     // Maintenance request number
             string szIssue;         // Description of the issue
             string szReporter;      // Staff member reporting the issue
+            MaintenanceRequest* pNext;
         };
 
+        MaintenanceRequest* pTop;
 
     public:
         MaintenanceStack();
