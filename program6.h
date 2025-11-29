@@ -57,10 +57,10 @@ class MaintenanceStack
             int iRequestNumber;     // Maintenance request number
             string szIssue;         // Description of the issue
             string szReporter;      // Staff member reporting the issue
-            MaintenanceRequest* pNext;
+            MaintenanceRequest* pNext;  //points to the next node in the linked list
         };
 
-        MaintenanceRequest* pTop;
+        MaintenanceRequest* pTop; //points to the most recent issue
 
     public:
         MaintenanceStack();
