@@ -30,8 +30,8 @@ void displayMenu(string szMenuName, string szChoicesArr[], int iChoices)
 
 /*********************************************************************
 File name: program6_driver.cpp
-Author: <Insert Name>
-Date: <Insert Date>
+Author: Kripa Hayanju, Nikasha Pokharel
+Date: 11/29/2025
 
 Purpose:
     Program driver for program 6.
@@ -46,6 +46,9 @@ Notes:
 *********************************************************************/
 int main() 
 { 
+	TrainQueue train;
+	MaintenanceStack maintenance;
+
     string szMenuName = "\nRailway Station Management System";
     string szMenuChoicesArr[9] = 
     {
@@ -59,8 +62,114 @@ int main()
         "Clear maintenance requests",
         "Exit"
     };
+	
+	int iChoice;
+	do 
+    {
+        displayMenu( szMenuName, szMenuChoicesArr, 9);
+		cout << "Select an option: ";
+		cin >> iChoice;
 
-	cout << "Todo: Implement Driver" << endl;
+        switch (iChoice) 
+        {
+            case 1:
+            {
+                int iNum, iPassengers;
+				string szDest, szTime;
+
+				cout << "Enter train number: ";
+				cin >> iNum;
+				cin.ignore();
+
+				cout << "Enter destination: ";
+				getline(cin, szDest);
+
+				cout << "Enter departure time: ";
+				getline(cin, szTime);
+
+				cout << "Enter passenger count ";
+				cin >> iPassengers;
+
+				train.enqueueTrain(iNum, szDest, szTime, iPassengers);
+
+				cout << "Train added to queue." << endl;
+
+				break;
+            } 
+            case 2: 
+            {
+                cout << "Peeking the next train: " << endl;
+				train.peekTrain();
+				break;
+            }
+            case 3: 
+            {
+                cout << "Processing the next train: " << endl;
+    			cout << train.dequeueTrain() << endl;
+    			break;
+            }
+            case 4: 
+            {
+                while(!train.isEmpty())
+				{
+					train.dequeueTrain();
+				}
+                cout << "Cleared train departures." << endl;
+				break;
+            }
+            case 5:
+            {
+                int iR;
+                string szI, szR;
+
+                cout << "Enter maintenance request number: ";
+				cin >> iR;
+				cin.ignore();
+
+				cout << "Enter maintenance issue: ";
+				getline(cin, szI);
+
+				cout << "Enter staff reporter name: ";
+				getline(cin, szR);
+
+                maintenance.pushRequest(iR, szI, szR);
+
+                cout << "Maintenance request added to stack." << endl;
+                break;
+            }
+            case 6:
+            {
+                cout << "Peeking the latest maintenance request: " << endl;
+				maintenance.peekRequest();
+				break;
+            }
+            case 7:
+            {
+                cout << "Resolving the latest maintenance request: " << endl;
+    			cout << maintenance.popRequest() << endl;
+    			break;
+            }
+            case 8:
+            {
+                while(!maintenance.isEmpty())
+				{
+					maintenance.popRequest();
+				}
+                cout << "Cleared maintenance requests." << endl;
+				break;
+            }
+            case -1: 
+            {
+                cout << "Exiting program." << endl; 
+                break;
+            }
+            default: 
+            {
+                cout << "Invalid iChoice. Try again." << endl;
+            }
+        }
+
+    } while (iChoice != -1);
 
 	return 0;
 }
