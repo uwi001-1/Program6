@@ -4,6 +4,7 @@
 using namespace std;
 
 inline string szBreakMessage = "*****************************\n";
+const int iMax = 100;
 
 /*********************************************************************
 Class Name: TrainQueue
@@ -25,7 +26,11 @@ class TrainQueue
             string szDepartureTime; // Departure time (e.g., "10:30 AM")
             int iPassengers;        // Number of passengers
         };
-        
+		
+        Train queue[iMax];
+        int iFront;
+        int iRear;
+        int iCount;       
 
     public:
         TrainQueue();
@@ -48,7 +53,6 @@ Notes:
     You can implement the stack with a linked list or an array. 
     Do not change the public function prototypes.
 *********************************************************************/
-//As Linked List
 class MaintenanceStack 
 {
     private:
@@ -57,10 +61,10 @@ class MaintenanceStack
             int iRequestNumber;     // Maintenance request number
             string szIssue;         // Description of the issue
             string szReporter;      // Staff member reporting the issue
-            MaintenanceRequest* pNext;  //points to the next node in the linked list
+            MaintenanceRequest* pNext;   //points to the next node in the linked list
         };
 
-        MaintenanceRequest* pTop; //points to the most recent issue
+        MaintenanceRequest* pTop;    //points to the most recent issue
 
     public:
         MaintenanceStack();
