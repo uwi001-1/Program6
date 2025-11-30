@@ -84,9 +84,9 @@ void MaintenanceStack::peekRequest()
     string szI = pTop->szIssue;
     string szR = pTop->szReporter;
 
-    cout << "Latest Request Number: " << iN;
-    cout << ", Description: " << szI;
-    cout << ", Reported By: " << szR << endl;
+    cout << "Resolving Maintenance Request Number: " << iN;
+    cout << ", Issue: " << szI;
+    cout << ", Reported by: " << szR << endl;
 }
 
 /*********************************************************************
@@ -133,7 +133,7 @@ string MaintenanceStack::popRequest()
 
     MaintenanceRequest* pTemp = pTop;
 
-    string szFormat = "Resolving Request Number: " + to_string(pTemp->iRequestNumber) + ", Description: " + pTemp->szIssue + ", Reported By: " + pTemp->szReporter;
+    string szFormat = "Resolving Maintenance Request Number: " + to_string(pTemp->iRequestNumber) + ", Issue: " + pTemp->szIssue + ", Reported by: " + pTemp->szReporter;
 
     pTop = pTop->pNext;
 

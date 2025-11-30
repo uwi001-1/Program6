@@ -87,7 +87,7 @@ int main()
 				cout << "Enter departure time: ";
 				getline(cin, szTime);
 
-				cout << "Enter passenger count ";
+				cout << "Enter passenger count: ";
 				cin >> iPassengers;
 
 				train.enqueueTrain(iNum, szDest, szTime, iPassengers);
@@ -114,7 +114,7 @@ int main()
 				{
 					train.dequeueTrain();
 				}
-                cout << "Cleared train departures." << endl;
+                cout << "Emptying train queue" << endl;
 				break;
             }
             case 5:
@@ -165,7 +165,7 @@ int main()
             }
             default: 
             {
-                cout << "Invalid iChoice. Try again." << endl;
+                cout << "Invalid Choice. Try again." << endl;
             }
         }
 
