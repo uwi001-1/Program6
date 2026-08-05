@@ -76,3 +76,15 @@ Each maintenance request contains:
 - Staff reporter name
 
 ---
+
+## Concepts Demonstrated
+
+- Object-Oriented Programming (OOP)
+- Queues (FIFO)
+- Stacks (LIFO)
+- Dynamic Memory Management
+- Linked Data Structures
+- Classes and Objects
+- Pointers
+- Menu-Driven Programming
+- Modular Programming
